@@ -36,11 +36,6 @@ export default defineComponent({
       news
     };
   },
-  // watch: {
-  //   props(newProp, oldProp) {
-  //     console.log('new props', newProp, oldProp);
-  //   }
-  // }
 })
 </script>
 

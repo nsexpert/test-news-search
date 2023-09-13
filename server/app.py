@@ -19,17 +19,13 @@ def hello():
         keyword = data['keyword']
     if 'page' in data:
         page = data['page']
-        print('page', page)
     if 'language' in data:
         language = data['language']
-        print('language', language)
 
-    print('keyword', keyword)
     if keyword != '':
         current_date = datetime.now()
         last_month_date = current_date - timedelta(days=30)
         formatted_date = last_month_date.strftime("%Y-%m-%d")
-        print(formatted_date)
         result = newsSearchEngine.get_everything(
             q=keyword, 
             sources='bbc-news,the-verge', 

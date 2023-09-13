@@ -21,12 +21,14 @@ You can get the API from *newsapi.org* site easily.
 2. Then let's run the server first
     ==========> Server <===============
     Did you install python3.9.0
-    if so, you can easily run the server by using *!run.bat* (It installs all the needed modules by using pip and then run the project automatically)
+    - Please config your own env file by using **.env.example**
+    - Then, you can easily run the server by using **1-run_server.bat** (It installs all the needed modules by using pip and then run the project automatically)
 
 3. Then let's go on the client side.
     ===========> Client <==============
-    - please install the node modules by using *npm i*
-    - then you can run the vue project by running this command *npm run client*
+    - Please install the node modules by using **2-npm i.bat**
+    - Then you can run the vue project by running this command **3-run_client.bat**
+    - You can build frontend by using webpack by running **webpack-build.bat**
 
 4. That's it. Thank you.
 

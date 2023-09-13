@@ -66,7 +66,6 @@ export default defineComponent({
     })
 
     function search() {
-      console.log('called search', keyword.value);
       var path = "http://localhost:5000/search";
       loading.value = true;
       axios.post(path, {
@@ -74,7 +73,6 @@ export default defineComponent({
         page: page.value,
         language: language.value
       }).then((res) => {
-        console.log('res', res.data);
         if (res.data.status === 'no data') {
           newsList.value = [];
           pages.value = 0;
@@ -82,14 +80,12 @@ export default defineComponent({
         } else if (res.data.status === 'ok') {
           newsList.value = [...res.data.articles];
           pages.value = Math.floor(parseInt(res.data.totalResults) / 10) + 1;
-          console.log('pages', pages, res.data.totalResults, newsList.value, typeof res.data.totalResults);
         }
       }).catch((error) => {
         console.log('error', error)
       }).finally(() => {
         loading.value = false;
       })
-      console.log('test', newsList.value);
     }
     return {
       loading,
