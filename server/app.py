@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request
 from flask_cors import CORS
 from datetime import datetime, timedelta
@@ -11,6 +12,7 @@ CORS = CORS(app)
 def hello():
     result = {"articles": [], "status": 'no data'}
     data = request.json
+    news_source = os.getenv('NEWS_SOURCE')
     keyword = ''
     page=1
     language = 'en'
@@ -28,7 +30,7 @@ def hello():
         formatted_date = last_month_date.strftime("%Y-%m-%d")
         result = newsSearchEngine.get_everything(
             q=keyword, 
-            sources='bbc-news,the-verge', 
+            sources=news_source, 
             from_param=formatted_date,
             language=language['value'],
             sort_by="relevancy",
